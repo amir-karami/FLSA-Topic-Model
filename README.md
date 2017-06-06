@@ -61,7 +61,7 @@ Fifth, The FLSA_TM function is in the following format and all the variables sho
 
 FLSA_TM (InputFile,Num_Topics,Num_Words,WW,Destination)
 
-InputFile: A txt or csv file that each line is a document and the last line is empty. Users can put the input file in the folder that just created such as InputFile="/Users/Amir/Desktop/FLSA/data.txt"
+InputFile: A txt or csv file that each line is a document and the last line is empty. This means that all the documents should be in one file (not seprate .txt files in a folder). Users can put the input file in the folder that just created such as InputFile="/Users/Amir/Desktop/FLSA/data.txt"
 
 Num_Topics: Number of Topics
 

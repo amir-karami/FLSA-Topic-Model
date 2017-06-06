@@ -9,11 +9,17 @@ Karami, Amir, et al. "Fuzzy Approach Topic Discovery in Health and Medical Corpo
 or 
 
 @article{karami2017fuzzy,
+
   title={Fuzzy Approach Topic Discovery in Health and Medical Corpora},
+  
   author={Karami, Amir and Gangopadhyay, Aryya and Zhou, Bin and Kharrazi, Hadi},
+  
   journal={International Journal of Fuzzy Systems},
+  
   pages={1--12},
+  
   publisher={Springer}
+  
 }
 
 

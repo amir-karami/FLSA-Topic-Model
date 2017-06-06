@@ -2,6 +2,22 @@
 
 Fuzzy Latent Semantic Analysis 
 
+FLSA_TM is Open Source Software, and is released under the Apache License Version 2.0. You are welcome to use the code under the terms of the licence for research or commercial purposes. Please acknowledge its use with a citation:
+
+Karami, Amir, et al. "Fuzzy Approach Topic Discovery in Health and Medical Corpora." International Journal of Fuzzy Systems (2017): 1-12.
+
+or 
+
+@article{karami2017fuzzy,
+  title={Fuzzy Approach Topic Discovery in Health and Medical Corpora},
+  author={Karami, Amir and Gangopadhyay, Aryya and Zhou, Bin and Kharrazi, Hadi},
+  journal={International Journal of Fuzzy Systems},
+  pages={1--12},
+  publisher={Springer}
+}
+
+
+
 
 
 1- Data format

@@ -1,11 +1,16 @@
 # FLSA-Topic-Model
+
 Fuzzy Latent Semantic Analysis 
 
 
 1- Data format
+
 InputFile accepts both txt and csv format. Each line in a .txt or .csv is a document. The data is a txt or csv file where each line is of the form:
+
 Document1
+
 Document2
+
 ....
 
 It is important to know that the last line should be empty. 

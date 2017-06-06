@@ -21,7 +21,11 @@ It is important to know that the last line should be empty.
 
 2- Seetings
 
-Before running FLSA_TM, use the following command in R to install the prerequisite 
+First, Download and Install R and RStudio. 
+
+Second, download FLSA_TM.R and open it with RStudio >  File > Open File.
+
+Third, Before running FLSA_TM, use the following command in RStudio Console to install the prerequisite packages: 
 
 install.packages(tm)
 
@@ -51,7 +55,9 @@ install.packages(RColorBrewer)
 
 install.packages(tictoc)
 
-It is suggested to create a folder to save the outputs in that folder such as "/Users/Amir/Desktop/FLSA".The function is in the following format and all the variables should be defined:
+Fourth, It is suggested to create a folder to save the outputs in that folder such as "/Users/Amir/Desktop/FLSA".
+
+Fifth, The FLSA_TM function is in the following format and all the variables should be defined:
 
 FLSA_TM (InputFile,Num_Topics,Num_Words,WW,Destination)
 
@@ -65,8 +71,12 @@ WW: There are four Word Weighting methods in this package.(1) WW=1 is tf_idf, (2
 
 Destination: Users need to define the destination folder such as Destination="/Users/Amir/Desktop/FLSA"
 
-FLSA_TM processing time depeneds the number of documents or the number of words.
+One example is 
 
+FLSA_TM (InputFile="/Users/Amir/Desktop/FLSA/data.txt",Num_Topics=20,Num_Words=10,WW=1,Destination="/Users/Amir/Desktop/FLSA")
+
+
+FLSA_TM processing time depeneds the number of documents or the number of words.
 
 
 

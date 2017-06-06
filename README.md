@@ -25,7 +25,7 @@ First, Download and Install R and RStudio.
 
 Second, download FLSA_TM.R and open it with RStudio >  File > Open File.
 
-Third, Before running FLSA_TM, use the following command in RStudio Console to install the prerequisite packages: 
+Third, use the following commands in RStudio Console to install the prerequisite packages: 
 
 install.packages(tm)
 

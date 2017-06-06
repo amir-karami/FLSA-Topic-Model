@@ -92,8 +92,6 @@ There are three files as outouts in the Destination folder:
 
 
 
-4- Questions, Comments, Problems
-
-Please send an email to karami@sc.edu. 
+If you have Questions, Comments, Problems, please send an email to karami@sc.edu. 
 
 

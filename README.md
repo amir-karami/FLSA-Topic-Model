@@ -45,7 +45,7 @@ It is important to know that the last line should be empty.
 
 First, Download and Install R and RStudio. 
 
-Second, download FLSA_TM.R and open it with RStudio >  File > Open File.
+Second, download FLSA_TM.R and open it with RStudio >  File > Open File. Select all FLSA_TM code in Source or Script and click on Run.
 
 Third, use the following commands in RStudio Console to install the prerequisite packages: 
 

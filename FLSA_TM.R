@@ -55,10 +55,11 @@ matrix1 <- matrix0
 cat("Document Term Frequency Matrix Was Created","\n")
 
 if (WW ==1){ x <- lw_tf(matrix1)* gw_idf(matrix1)}
-else if (WW == 2) {x <- lw_tf(matrix1)* gw_idf(matrix1)}
+else if (WW == 2) {x <- lw_tf(matrix1)* gw_normalisation(matrix1)}
 else if (WW == 3){x <- lw_tf(matrix1)* gw_entropy(matrix1)}
-else if (WW == 4){x <- lw_tf(matrix1)* gw_entropy(matrix1)}
-else {x <- lw_tf(matrix1)* gw_idf(matrix1)}
+else if (WW == 4){x <- lw_tf(matrix1)* gw_gfidf(matrix1)}
+
+
 
 
 cat("Selected Word Weighting Method Was Implemented", "\n")
@@ -149,82 +150,4 @@ cat("Please Check FLSA_Outputs Folder", "\n")
 
 }
 
-
-
-
-
-
-
-
-# getting fle and readind it line by line
-fileName <- "/Users/amir/Documents/Data/GNIP-SCflood/CleanedData/Vishal-Flood/only tweets/2015-10-03.txt" 
-
-openfile <- file(fileName,open="r")
-readfile <- readLines(openfile)
-
-noc = 100                # enter the number of topic or cluster you want to create i am creating 20 clusters and displaying the top 20 words for each topic 
-twords = 20   # top words for each topic want to display
-
-a <- "/Users/amir/Desktop/Test/"            # Destination folder where you want to store or create file
-
-    
-corpus <- Corpus(VectorSource(readfile), readerControl=list(language="en"))
-
-
-dtm <- DocumentTermMatrix(corpus, control = list(stemming = FALSE, stopwords=TRUE, minWordLength=3, removeNumbers=TRUE, removePunctuation=TRUE ))
-matrix0 <- as.matrix(matrix0)
-matrix1 <- matrix0
-
-
-
-
-
-#x <- lw_tf(matrix1)* gw_idf(matrix1)
-x <- lw_tf(matrix1)* gw_entropy(matrix1)
-#x <- lw_tf(matrix1)* gw_normalisation(matrix1)
-
-
-#p(w)       
-pword <- 0
-sum_of_columns <- colSums(x)
-sum_of_matrix <- sum(x)
-for(i in 1:nrow(data.matrix(sum_of_columns))){pword[i]=sum_of_columns[i]/sum_of_matrix}
-
-#p(d) probability of document
-pdoc <- 0
-no_of_documents <- nrow(matrix1)
-for(i in 1:no_of_documents){pdoc[i]=1/no_of_documents}
-
-#p(w|d)
-rows = nrow(x)
-columns = ncol(x)
-sum_of_rows = rowSums(x)
-pwgd = matrix(rep(0),nrow = rows,ncol = columns)
-for (i in 1:rows){pwgd[i,]=x[i,]/sum_of_rows[i]}
-
-#deduction technique
-dR2 <- irlba(x, 2)
-
-#clustering p(T|D)
-ptgw <- skmeans(dR2$u,k = noc, m = 1.1,control = list(nruns = 2, verbose = TRUE))  #k in the number of cluster and for accessign the matrix we need $membership
-
-#p(T,D)
-A = matrix(rep(0), nrow = nrow(ptgw$membership), ncol = ncol(ptgw$membership))
-for (i in 1:nrow(A)){A[i,] = as.matrix(ptgw$membership[i,]*pdoc[i])}
-
-#p(d|t)
-B = matrix(rep(0),nrow=nrow(A),ncol = ncol(A))
-Sum_of_columns = colSums(A)
-for (j in 1:ncol(B)){B[,j]=A[,j]/Sum_of_columns[j]}
-
-#p(w|t)
-tpwdt <- t(pwgd)
-pwgt <- tpwdt %*% B
-
-file.remove(paste(a,"Top_words_per_Topics.txt",sep=""))
-q <- paste(a,"Top_words_per_Topics.txt",sep="")
-
-sink(q,append=TRUE)
-for (i in 1:noc){cat ("", "",row.names(t(matrix1))[order(pwgt[,i],decreasing = TRUE)[1:twords]],"\n")}
-sink()
 

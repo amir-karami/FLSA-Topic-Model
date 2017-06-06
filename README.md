@@ -73,7 +73,7 @@ Destination: Users need to define the destination folder such as Destination="/U
 
 One example is 
 
-FLSA_TM (InputFile="/Users/Amir/Desktop/FLSA/data.txt",Num_Topics=20,Num_Words=10,WW=1,Destination="/Users/Amir/Desktop/FLSA")
+FLSA_TM ("/Users/Amir/Desktop/FLSA/data.txt",20,10,1,"/Users/Amir/Desktop/FLSA")
 
 
 FLSA_TM processing time depeneds the number of documents or the number of words.

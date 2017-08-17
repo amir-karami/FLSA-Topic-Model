@@ -92,6 +92,8 @@ dR2 <- irlba(x, 2)
 file.remove(paste(c,paste("Probability_of_Topics_for_Documents.txt",sep=""), sep=""))
 file.remove(paste(c,paste("Probability_of_Words_for_Topics.txt",sep=""), sep=""))
 file.remove(paste(c,paste("Top_words_per_Topics.txt",sep=""), sep=""))
+unlink("/Users/amir/Documents/Research/Case-Reports/Neurology/cont/FLSA/FLSA_Outputs", recursive = TRUE)
+
 
 
 file.remove(paste(a,"FLSA_Outputs",sep=""))

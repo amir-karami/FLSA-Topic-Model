@@ -48,6 +48,8 @@ twords <- Num_Words
 a <- Destination
 
 corpus <- Corpus(VectorSource(readfile), readerControl=list(language="en"))
+corpus <- tm_map(corpus, function(x) iconv(enc2utf8(x), sub = "byte"))
+
 dtm <- DocumentTermMatrix(corpus, control = list(stemming = FALSE, stopwords=TRUE, minWordLength=3, removeNumbers=TRUE, removePunctuation=TRUE ))
 matrix0 <- as.matrix(dtm)
 matrix1 <- matrix0
